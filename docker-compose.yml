@@ -10,6 +10,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=pass
       - PGUSER=postgres
+      - POSTGRES_DB=pg_denormalized
     ports:
       - 1055:5432
 
@@ -22,6 +23,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=pass
       - PGUSER=postgres
+      - POSTGRES_DB=pg_normalized
     ports:
       - 1056:5432
 
@@ -34,6 +36,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=pass
       - PGUSER=postgres
+      - POSTGRES_DB=pg_normalized_batch
     ports:
       - 1057:5432
 
