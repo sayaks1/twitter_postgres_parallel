@@ -53,14 +53,18 @@ def get_id_urls(url):
     ;
     ''')
     res = connection.execute(sql,{'url':url}).first()
+
+    if res:
+        return res[0]
+
+    select_sql = sqlalchemy.sql.text('''
         select id_urls 
         from urls
         where
             url=:url
         ''')
-        res = connection.execute(sql,{'url':url}).first()
-    id_urls = res[0]
-    return id_urls
+    res = connection.execute(select_sql,{'url':url}).first()
+    return res[0] 
 
 
 def batch(iterable, n=1):

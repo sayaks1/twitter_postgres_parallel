@@ -43,6 +43,7 @@ CREATE TABLE tweets (
     in_reply_to_status_id BIGINT,
     in_reply_to_user_id BIGINT,
     quoted_status_id BIGINT,
+    is_quote_status BOOLEAN,
     retweet_count SMALLINT,
     favorite_count SMALLINT,
     quote_count SMALLINT,

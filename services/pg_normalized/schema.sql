@@ -45,6 +45,7 @@ CREATE TABLE tweets (
     in_reply_to_status_id BIGINT,
     in_reply_to_userid BIGINT,
     quoted_status_id BIGINT,
+    is_quote_status BOOLEAN,
     retweet_count SMALLINT,
     favorite_count SMALLINT,
     quote_count SMALLINT,
@@ -60,7 +61,7 @@ CREATE TABLE tweets (
     geo_coordinates GEOMETRY,
     geo geometry,
     FOREIGN KEY (id_users) REFERENCES users(id_users),
-    FOREIGN KEY (in_reply_to_user_id) REFERENCES users(id_users)
+    FOREIGN KEY (in_reply_to_userid) REFERENCES users(id_users)
 
     -- NOTE:
     -- We do not have the following foreign keys because they would require us
