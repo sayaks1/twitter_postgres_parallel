@@ -53,8 +53,6 @@ def get_id_urls(url):
     ;
     ''')
     res = connection.execute(sql,{'url':url}).first()
-    if res is None:
-        sql = sqlalchemy.sql.text('''
         select id_urls 
         from urls
         where

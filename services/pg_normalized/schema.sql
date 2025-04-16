@@ -43,7 +43,7 @@ CREATE TABLE tweets (
     id_users BIGINT,
     created_at TIMESTAMPTZ,
     in_reply_to_status_id BIGINT,
-    in_reply_to_user_id BIGINT,
+    in_reply_to_userid BIGINT,
     quoted_status_id BIGINT,
     retweet_count SMALLINT,
     favorite_count SMALLINT,
