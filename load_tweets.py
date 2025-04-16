@@ -277,6 +277,7 @@ def insert_tweet(connection,tweet):
             :geo_type,
             ST_GeomFromText(:geo_coordinates, 4326) 
         )
+	ON CONFLICT DO NOTHING
     ''')
     connection.execute(sql, {
         'id_tweets': tweet['id'],
@@ -394,6 +395,7 @@ def insert_tweet(connection,tweet):
         sql = sqlalchemy.sql.text('''
             INSERT INTO tweet_media (id_tweets, id_urls)
             VALUES (:id_tweets, :id_urls)
+	    ON CONFLICT DO NOTHING
         ''')
         connection.execute(sql, {
             'id_tweets': tweet['id'],
